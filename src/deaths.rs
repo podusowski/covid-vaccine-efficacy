@@ -64,7 +64,7 @@ pub(crate) struct DeathsData {
 
 impl DeathsData {
     pub fn new() -> Self {
-        let file = std::fs::File::open("data/ewp_dsh_zgony_po_szczep_20211214.csv").unwrap();
+        let file = std::fs::File::open("data/ewp_dsh_zgony_po_szczep_202202010941.csv").unwrap();
         let transcoded = encoding_rs_io::DecodeReaderBytesBuilder::new()
             .encoding(Some(encoding_rs::ISO_8859_2))
             .build(file);
