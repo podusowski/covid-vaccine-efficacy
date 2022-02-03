@@ -38,6 +38,13 @@ fn weeks_of_2021() -> impl Iterator<Item = YearWeek> {
         .take(51)
 }
 
+fn weeks(max: YearWeek) -> impl Iterator<Item = YearWeek> {
+    NaiveDate::from_ymd(2021, 1, 1)
+        .iter_weeks()
+        .map(|week| YearWeek::from(week.iso_week()))
+        .take_while(move |week| week <= &max)
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 struct AgeGroup((usize, usize));
 
@@ -221,7 +228,8 @@ fn main() -> anyhow::Result<()> {
     };
 
     for age_group in AGE_GROUPS {
-        let weekly_reports = weeks_of_2021().map(|week| (week, weekly_report(week, *age_group)));
+        let weekly_reports =
+            weeks(cases.max_week()).map(|week| (week, weekly_report(week, *age_group)));
         println!(
             "Grupa wiekowa {} (populacja: {})",
             age_group,
