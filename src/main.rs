@@ -16,7 +16,7 @@ mod plots;
 mod tables;
 mod vaccination;
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Hash, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Clone, Copy)]
 struct YearWeek((u32, u32));
 
 impl From<IsoWeek> for YearWeek {
