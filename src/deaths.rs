@@ -139,7 +139,6 @@ impl InfectionsData {
         age_group: AgeGroup,
         vaccination_status: VaccinationStatus,
     ) -> usize {
-        //TODO: COUNT!!!!!!!
         self.cases
             .iter()
             .filter(|death| {
