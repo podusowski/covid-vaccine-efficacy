@@ -1,0 +1,19 @@
+[package]
+name = "covid-vaccine-efficacy"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+csv = "*"
+serde = { version = "*", features = ["derive"] }
+anyhow = "*"
+regex = "*"
+chrono = "*"
+plotters = "*"
+encoding_rs = "*"
+encoding_rs_io = "*"
+calamine = "*"
+prettytable-rs = "*"
+statrs = "*"
