@@ -107,6 +107,14 @@ impl WeeklyReport {
     fn case_risk_ratio_of_three_doses(&self) -> f64 {
         self.cases_per_million.three_doses / self.cases_per_million.unvaccinated
     }
+
+    fn cfr_unvaccinated(&self) -> f64 {
+        self.absolute_deaths.unvaccinated as f64 / self.absolute_cases.unvaccinated as f64
+    }
+
+    fn cfr_two_doses(&self) -> f64 {
+        self.absolute_deaths.two_doses as f64 / self.absolute_cases.two_doses as f64
+    }
 }
 
 // Deaths and demographics are grouped by year, ECDC vaccination data however is

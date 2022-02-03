@@ -82,6 +82,13 @@ pub(crate) fn print_stats_for_age_group(
         ("RR zg. (3)", &|_, report| {
             format!("{:.2}", report.risk_ratio_of_three_doses())
         }),
+        // CFR
+        ("CFR (NZ)", &|_, report| {
+            format!("{:.3}", report.cfr_unvaccinated())
+        }),
+        ("CFR (2)", &|_, report| {
+            format!("{:.3}", report.cfr_two_doses())
+        }),
     ];
 
     table.add_row(Row::new(data.iter().map(|row| Cell::new(row.0)).collect()));
