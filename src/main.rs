@@ -258,6 +258,7 @@ fn main() -> anyhow::Result<()> {
     plots::draw_deaths_per_million_per_vaccination_status(&weekly_reports_per_age_group);
     plots::draw_weekly_vaccinations(&vaccinations)?;
     plots::draw_risk_ratios(&weekly_reports_per_age_group);
+    plots::draw_case_risk_ratios(&weekly_reports_per_age_group);
 
     plots::draw_vaccinations_one_dose(&weekly_reports_per_age_group);
     plots::draw_vaccinations_two_doses(&weekly_reports_per_age_group);

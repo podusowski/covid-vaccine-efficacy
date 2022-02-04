@@ -180,6 +180,49 @@ pub(crate) fn draw_risk_ratios(reports: &WeeklyReports) {
     );
 }
 
+pub(crate) fn draw_case_risk_ratios(reports: &WeeklyReports) {
+    quick_weekly_chart(
+        reports,
+        "output/infection_risk_ratios.svg".to_owned(),
+        "Ryzyko względne pozytywnego testu u osób zaszczepionych (%)".to_owned(),
+        "%".to_owned(),
+        200,
+        |chart| {
+            let color = Palette99::pick(0);
+            chart
+                .draw_series(LineSeries::new(
+                    reports
+                        .mean(WeeklyReport::case_risk_ratio_of_two_doses)
+                        .iter()
+                        .enumerate()
+                        .map(|(n, (_, rr))| (n as u32, (rr * 100f64) as u32)),
+                    color.stroke_width(2),
+                ))
+                .unwrap()
+                .label("2 dawki")
+                .legend(move |(x, y)| {
+                    Rectangle::new([(x, y - 5), (x + 10, y + 5)], color.filled())
+                });
+
+            let color = Palette99::pick(1);
+            chart
+                .draw_series(LineSeries::new(
+                    reports
+                        .mean(WeeklyReport::case_risk_ratio_of_three_doses)
+                        .iter()
+                        .enumerate()
+                        .map(|(n, (_, rr))| (n as u32, (rr * 100f64) as u32)),
+                    color.stroke_width(2),
+                ))
+                .unwrap()
+                .label("3 dawki")
+                .legend(move |(x, y)| {
+                    Rectangle::new([(x, y - 5), (x + 10, y + 5)], color.filled())
+                });
+        },
+    );
+}
+
 pub(crate) fn draw_deaths_per_million_per_vaccination_status(reports: &WeeklyReports) {
     quick_weekly_chart(
         reports,
