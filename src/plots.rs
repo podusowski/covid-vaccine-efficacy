@@ -154,7 +154,7 @@ pub(crate) fn draw_risk_ratios(reports: &WeeklyReports) {
         "%".to_owned(),
         100,
         |chart| {
-            let color = Palette99::pick(0);
+            let color = Palette99::pick(1);
             chart
                 .draw_series(LineSeries::new(
                     reports
@@ -170,7 +170,7 @@ pub(crate) fn draw_risk_ratios(reports: &WeeklyReports) {
                     Rectangle::new([(x, y - 5), (x + 10, y + 5)], color.filled())
                 });
 
-            let color = Palette99::pick(1);
+            let color = Palette99::pick(2);
             chart
                 .draw_series(LineSeries::new(
                     reports
@@ -197,7 +197,7 @@ pub(crate) fn draw_case_risk_ratios(reports: &WeeklyReports) {
         "%".to_owned(),
         200,
         |chart| {
-            let color = Palette99::pick(0);
+            let color = Palette99::pick(1);
             chart
                 .draw_series(LineSeries::new(
                     reports
@@ -213,7 +213,7 @@ pub(crate) fn draw_case_risk_ratios(reports: &WeeklyReports) {
                     Rectangle::new([(x, y - 5), (x + 10, y + 5)], color.filled())
                 });
 
-            let color = Palette99::pick(1);
+            let color = Palette99::pick(2);
             chart
                 .draw_series(LineSeries::new(
                     reports
