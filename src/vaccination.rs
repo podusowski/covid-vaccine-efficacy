@@ -56,6 +56,8 @@ struct VaccinationEcdcRow {
     second_dose: usize,
     #[serde(alias = "DoseAdditional1")]
     third_dose: usize,
+    #[serde(alias = "Vaccine")]
+    vaccine: String,
 }
 
 fn read_vaccinations() -> Vec<VaccinationEcdcRow> {
@@ -86,11 +88,21 @@ impl VaccinatedPeople {
             at_least_three_doses: self.at_least_three_doses + rhs.third_dose,
             // Doing checked subtraction since there are some discrepancies in the ECDC data,
             // showing couple people as vaccinated with booster before getting second dose.
+            // For JJ 1-dose vaccine, second is shot is considered a booster. As such, we
+            // have to mind from which set to decrement.
             one_dose: (self.one_dose + rhs.first_dose)
-                .checked_sub(rhs.second_dose)
+                .checked_sub(if rhs.vaccine == "JANSS" {
+                    rhs.third_dose
+                } else {
+                    rhs.second_dose
+                })
                 .unwrap_or_default(),
             two_doses: (self.two_doses + rhs.second_dose)
-                .checked_sub(rhs.third_dose)
+                .checked_sub(if rhs.vaccine == "JANSS" {
+                    0
+                } else {
+                    rhs.third_dose
+                })
                 .unwrap_or_default(),
             three_doses: self.three_doses + rhs.third_dose,
         }
