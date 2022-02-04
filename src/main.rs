@@ -137,7 +137,7 @@ const AGE_GROUPS: &'static [AgeGroup] = &[
 struct WeeklyReports(Vec<(YearWeek, HashMap<AgeGroup, WeeklyReport>)>);
 
 impl WeeklyReports {
-    fn mean(&self, metric: &impl Fn(&WeeklyReport) -> f64) -> Vec<(YearWeek, f64)> {
+    fn mean(&self, metric: impl Fn(&WeeklyReport) -> f64) -> Vec<(YearWeek, f64)> {
         self.0
             .iter()
             .map(|(week, report)| {
@@ -145,7 +145,7 @@ impl WeeklyReports {
                     *week,
                     report
                         .values()
-                        .map(metric)
+                        .map(&metric)
                         .filter(|rr| rr.is_finite())
                         .mean(),
                 )

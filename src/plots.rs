@@ -149,7 +149,7 @@ pub(crate) fn draw_risk_ratios(reports: &WeeklyReports) {
             chart
                 .draw_series(LineSeries::new(
                     reports
-                        .mean(&WeeklyReport::risk_ratio_of_two_doses)
+                        .mean(WeeklyReport::risk_ratio_of_two_doses)
                         .iter()
                         .enumerate()
                         .map(|(n, (_, rr))| (n as u32, (rr * 100f64) as u32)),
@@ -165,7 +165,7 @@ pub(crate) fn draw_risk_ratios(reports: &WeeklyReports) {
             chart
                 .draw_series(LineSeries::new(
                     reports
-                        .mean(&WeeklyReport::risk_ratio_of_three_doses)
+                        .mean(WeeklyReport::risk_ratio_of_three_doses)
                         .iter()
                         .enumerate()
                         .map(|(n, (_, rr))| (n as u32, (rr * 100f64) as u32)),
