@@ -226,9 +226,10 @@ fn main() -> anyhow::Result<()> {
         }
     };
 
+    let max_week = *[cases.max_week(), deaths.max_week()].iter().min().unwrap();
+
     for age_group in AGE_GROUPS {
-        let weekly_reports =
-            weeks(cases.max_week()).map(|week| (week, weekly_report(week, *age_group)));
+        let weekly_reports = weeks(max_week).map(|week| (week, weekly_report(week, *age_group)));
         println!(
             "Grupa wiekowa {} (populacja: {})",
             age_group,
@@ -239,7 +240,7 @@ fn main() -> anyhow::Result<()> {
     }
 
     let weekly_reports_per_age_group = WeeklyReports(
-        weeks_of_2021()
+        weeks(max_week)
             .map(|week| {
                 (
                     week,

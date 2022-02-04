@@ -55,28 +55,28 @@ Tydzień
 2020W53
 </text>
 <polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="52,356 52,361 "/>
-<text x="245" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<text x="221" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 2021W10
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="245,356 245,361 "/>
-<text x="439" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="221,356 221,361 "/>
+<text x="391" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 2021W20
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="439,356 439,361 "/>
-<text x="632" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="391,356 391,361 "/>
+<text x="561" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 2021W30
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="632,356 632,361 "/>
-<text x="826" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="561,356 561,361 "/>
+<text x="731" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 2021W40
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="826,356 826,361 "/>
-<text x="1020" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="731,356 731,361 "/>
+<text x="901" y="366" dy="0.76em" text-anchor="middle" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 2021W50
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="1020,356 1020,361 "/>
-<polyline fill="none" opacity="1" stroke="#E6194B" stroke-width="2" points="52,355 71,355 90,355 110,355 129,355 148,355 168,355 187,355 206,355 226,259 245,348 264,355 284,351 303,355 323,341 342,335 361,355 381,348 400,331 419,348 439,331 458,331 477,232 497,345 516,351 536,345 555,351 574,338 594,351 613,355 632,355 652,345 671,256 690,348 710,226 729,331 748,331 768,341 787,322 807,338 826,318 845,312 865,325 884,315 903,325 923,325 942,308 961,315 981,315 1000,318 1020,305 "/>
-<polyline fill="none" opacity="1" stroke="#3CB44B" stroke-width="2" points="52,355 71,355 90,355 110,355 129,355 148,355 168,355 187,355 206,355 226,355 245,355 264,355 284,355 303,355 323,355 342,355 361,355 381,355 400,355 419,355 439,355 458,355 477,355 497,355 516,355 536,355 555,355 574,355 594,355 613,355 632,355 652,355 671,355 690,355 710,355 729,355 748,355 768,355 787,355 807,355 826,355 845,355 865,331 884,355 903,355 923,355 942,355 961,345 981,348 1000,351 1020,355 "/>
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="901,356 901,361 "/>
+<polyline fill="none" opacity="1" stroke="#E6194B" stroke-width="2" points="52,355 68,355 85,355 102,355 119,355 136,355 153,355 170,355 187,355 204,259 221,348 238,355 255,351 272,355 289,341 306,335 323,355 340,348 357,331 374,348 391,331 408,331 425,232 442,345 459,351 476,345 493,351 510,338 527,351 544,355 561,355 578,345 595,256 612,348 629,226 646,331 663,331 680,341 697,322 714,338 731,318 748,312 765,325 782,315 799,325 816,325 833,308 850,315 867,315 884,318 901,305 918,289 935,312 952,213 969,259 986,269 1003,269 1020,236 "/>
+<polyline fill="none" opacity="1" stroke="#3CB44B" stroke-width="2" points="52,355 68,355 85,355 102,355 119,355 136,355 153,355 170,355 187,355 204,355 221,355 238,355 255,355 272,355 289,355 306,355 323,355 340,355 357,355 374,355 391,355 408,355 425,355 442,355 459,355 476,355 493,355 510,355 527,355 544,355 561,355 578,355 595,355 612,355 629,355 646,355 663,355 680,355 697,355 714,355 731,355 748,355 765,331 782,355 799,355 816,355 833,355 850,345 867,348 884,351 901,355 918,351 935,355 952,351 969,348 986,351 1003,351 1020,325 "/>
 <rect x="492" y="31" width="87" height="44" opacity="1" fill="none" stroke="#000000"/>
 <text x="532" y="41" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 2 dawki

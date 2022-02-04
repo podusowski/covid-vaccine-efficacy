@@ -88,6 +88,14 @@ impl DeathsData {
         }
     }
 
+    pub fn max_week(&self) -> YearWeek {
+        self.deaths
+            .iter()
+            .map(|cases| YearWeek::from(cases.date.iso_week()))
+            .max()
+            .unwrap()
+    }
+
     pub fn by_vaccination_status(
         &self,
         week: YearWeek,
