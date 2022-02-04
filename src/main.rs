@@ -108,6 +108,10 @@ impl WeeklyReport {
     fn cfr_two_doses(&self) -> f64 {
         self.absolute_deaths.two_doses as f64 / self.absolute_cases.two_doses as f64
     }
+
+    fn cfr_three_doses(&self) -> f64 {
+        self.absolute_deaths.three_doses as f64 / self.absolute_cases.three_doses as f64
+    }
 }
 
 // Deaths and demographics are grouped by year, ECDC vaccination data however is
@@ -252,6 +256,7 @@ fn main() -> anyhow::Result<()> {
     plots::draw_weekly_vaccinations(&vaccinations)?;
     plots::draw_risk_ratios(&weekly_reports_per_age_group);
     plots::draw_case_risk_ratios(&weekly_reports_per_age_group);
+    plots::draw_cfr(&weekly_reports_per_age_group);
 
     plots::draw_vaccinations_one_dose(&weekly_reports_per_age_group);
     plots::draw_vaccinations_two_doses(&weekly_reports_per_age_group);
