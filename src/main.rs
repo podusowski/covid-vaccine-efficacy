@@ -171,10 +171,17 @@ impl WeeklyReports {
 }
 
 fn main() -> anyhow::Result<()> {
+    println!("Ładowanie danych o demografii.");
     let ages = age_distribution();
     let total_population = ages.population();
+
+    println!("Ładowanie danych o szczepieniach.");
     let vaccinations = VaccinationData::new();
+
+    println!("Ładowanie danych o zgonach.");
     let deaths = DeathsData::new();
+
+    println!("Ładowanie danych o infekcjach.");
     let cases = InfectionsData::new();
 
     println!("Populacja ogólna: {}", total_population);
