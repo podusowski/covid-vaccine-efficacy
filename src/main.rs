@@ -137,7 +137,7 @@ const AGE_GROUPS: &'static [AgeGroup] = &[
 struct WeeklyReports(Vec<(YearWeek, HashMap<AgeGroup, WeeklyReport>)>);
 
 impl WeeklyReports {
-    fn mean_risk_ratio_of_two_doses(&self) -> Vec<(YearWeek, f64)> {
+    fn mean(&self, metric: &impl Fn(&WeeklyReport) -> f64) -> Vec<(YearWeek, f64)> {
         self.0
             .iter()
             .map(|(week, report)| {
@@ -145,23 +145,7 @@ impl WeeklyReports {
                     *week,
                     report
                         .values()
-                        .map(WeeklyReport::risk_ratio_of_two_doses)
-                        .filter(|rr| rr.is_finite())
-                        .mean(),
-                )
-            })
-            .collect()
-    }
-
-    fn mean_risk_ratio_of_three_doses(&self) -> Vec<(YearWeek, f64)> {
-        self.0
-            .iter()
-            .map(|(week, report)| {
-                (
-                    *week,
-                    report
-                        .values()
-                        .map(WeeklyReport::risk_ratio_of_three_doses)
+                        .map(metric)
                         .filter(|rr| rr.is_finite())
                         .mean(),
                 )
