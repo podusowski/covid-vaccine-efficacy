@@ -31,13 +31,6 @@ impl Display for YearWeek {
     }
 }
 
-fn weeks_of_2021() -> impl Iterator<Item = YearWeek> {
-    NaiveDate::from_ymd(2021, 1, 1)
-        .iter_weeks()
-        .map(|week| YearWeek::from(week.iso_week()))
-        .take(51)
-}
-
 fn weeks(max: YearWeek) -> impl Iterator<Item = YearWeek> {
     NaiveDate::from_ymd(2021, 1, 1)
         .iter_weeks()
