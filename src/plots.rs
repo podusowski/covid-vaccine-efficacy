@@ -72,10 +72,19 @@ fn quick_weekly_chart(
     let area = SVGBackend::new(path.as_str(), (1024, 400)).into_drawing_area();
     area.fill(&WHITE).unwrap();
 
+    let (top, bottom) = area.split_vertically(380);
+
+    bottom
+        .titled(
+            "Źródła danych: BASiW, ECDC, GUS",
+            ("sans-serif", 10).into_font().color(&BLACK.mix(0.5)),
+        )
+        .unwrap();
+
     let x_axis = 0u32..(reports.0.len() - 1) as u32;
     let y_axis = 0u32..max_x;
 
-    let mut chart = ChartBuilder::on(&area)
+    let mut chart = ChartBuilder::on(&top)
         .caption(
             caption.clone(),
             ("sans-serif", 16).into_font().color(&BLACK),
